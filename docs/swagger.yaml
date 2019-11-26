@@ -1,0 +1,44 @@
+info:
+  contact: {}
+  description: for learn go && wx
+  license: {}
+  termsOfService: https://github.com/adolfheir/go-wechat
+  title: Go WX API
+  version: "1.0"
+paths:
+  /wx:
+    get:
+      parameters:
+      - description: echostr
+        in: query
+        name: echostr
+        required: true
+        type: string
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        type: string
+      - description: timestamp
+        in: query
+        name: timestamp
+        required: true
+        type: string
+      - description: nonce
+        in: query
+        name: nonce
+        required: true
+        type: string
+      produces:
+      - text/xml
+      responses:
+        "200":
+          description: return the querry echostr
+          schema:
+            type: string
+        "400":
+          description: return the errormsg
+          schema:
+            type: string
+      summary: 微信校验
+swagger: "2.0"
